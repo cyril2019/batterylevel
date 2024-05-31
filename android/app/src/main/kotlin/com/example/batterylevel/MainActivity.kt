@@ -41,7 +41,7 @@ class MainActivity: FlutterActivity() {
         if(!OriChatBot.isAvailable()) {
         } else{
             oriChatBot =  OriChatBot(this);
-           println("OriChatBot is available"+this);
+                   // oriChatBot.setAppDetails("https://vil-dev.oriserve.in/androidAppVodafone.html");
                 // bot.showToolbar(showToolbar.isChecked());
                 // bot.showMiniToolbar(showMiniToolbar.isChecked()).setPageTitle(editText1.getText().toString());
                 // String VC = editText.getText().toString().trim();
@@ -57,8 +57,8 @@ class MainActivity: FlutterActivity() {
                     userData.put("appDetails", "8.0.4");
                     userData.put("redirectionType", "internal");
                     oriChatBot.setPageTitle("Vodafone");
-                    oriChatBot.setAppDetails("https://vil-dev.oriserve.in/androidAppVodafone.html");
                     oriChatBot.setUserData(userData.toString());
+//                    oriChatBot.setBotId("https://webtest.vodafone-elb.oriserve.in/chatbot/androidAppVodafone.html");
                     // oriChatBot.setBotIdentifier("vodafone-dev");
                 //     oriChatBot.setBrand(brand);
                 //     oriChatBot.setMSISDN("9734902237");
