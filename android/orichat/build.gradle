@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'chat-lib'
+            keyPassword 'Vegas@2017'
+            storeFile file('/Users/harshganatra/Desktop/Ori/keystore/chatbot-library.keystore')
+            storePassword 'Vegas@2017'
+        }
+    }
+    compileSdkVersion 33
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 33
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'ori-proguard-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'ori-proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+}

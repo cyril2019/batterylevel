@@ -41,11 +41,6 @@ class MainActivity: FlutterActivity() {
         if(!OriChatBot.isAvailable()) {
         } else{
             oriChatBot =  OriChatBot(this);
-                   // oriChatBot.setAppDetails("https://vil-dev.oriserve.in/androidAppVodafone.html");
-                // bot.showToolbar(showToolbar.isChecked());
-                // bot.showMiniToolbar(showMiniToolbar.isChecked()).setPageTitle(editText1.getText().toString());
-                // String VC = editText.getText().toString().trim();
-                // String baseUrl = baseUrltext.getText().toString().trim();
                 userData = JSONObject();
                     userData.put("udf1" , "9734902237");
                     userData.put("udf3" , "");
@@ -58,22 +53,7 @@ class MainActivity: FlutterActivity() {
                     userData.put("redirectionType", "internal");
                     oriChatBot.setPageTitle("Vodafone");
                     oriChatBot.setUserData(userData.toString());
-//                    oriChatBot.setBotId("https://webtest.vodafone-elb.oriserve.in/chatbot/androidAppVodafone.html");
-                    // oriChatBot.setBotIdentifier("vodafone-dev");
-                //     oriChatBot.setBrand(brand);
-                //     oriChatBot.setMSISDN("9734902237");
-                //     oriChatBot.setStateCode(stateCode);
-                    // oriChatBot.setCustomerName(customerName);
-                //     oriChatBot.setLob(lob);
-                //     oriChatBot.setJourneyData(journeyData.toString());
-                //     oriChatBot.addEventListener(new OriChatBot.EventListener() {
-                //     @Override
-                //     public void onEventReceived(JSONObject data) {
-                //         System.out.println("Event Received :------------------->  " + data);
-                //     }
-                // });
-                // oriChatBot.setBotId("https://vil-dev.oriserve.in/");
-                oriChatBot.launchBot();
+                    oriChatBot.setBaseUrl("https://webtest.vodafone-elb.oriserve.in/chatbot/androidAppVodafone.html");
         }
 
     }
@@ -92,47 +72,10 @@ class MainActivity: FlutterActivity() {
     }
 
     private fun getNativeData(): String {
+         if(!OriChatBot.isAvailable()) {
+             return "OriChatBot is not available"
+         }
+        oriChatBot.launchBot();
         return "OriChatBot is available"
-        // // Access your library's functionality here and return data
-        // if(!OriChatBot.isAvailable()) {
-        //     return "OriChatBot is not available"
-        // } else{
-        //     oriChatBot =  OriChatBot(this);
-        //    println("OriChatBot is available"+this);
-        //         // bot.showToolbar(showToolbar.isChecked());
-        //         // bot.showMiniToolbar(showMiniToolbar.isChecked()).setPageTitle(editText1.getText().toString());
-        //         // String VC = editText.getText().toString().trim();
-        //         // String baseUrl = baseUrltext.getText().toString().trim();
-        //         userData = JSONObject();
-        //             userData.put("udf1" , "9734902237");
-        //             userData.put("udf3" , "");
-        //             userData.put("customerId" , "1000003402");
-        //             userData.put("orderId" , "");
-        //             userData.put("orderLineItemId" , "vodafone-dev");
-        //             userData.put("journeyId" , "helpAndSupport-Anand");
-        //             userData.put("brand" , "vodafone-dev");
-        //             userData.put("appDetails", "8.0.4");
-        //             userData.put("redirectionType", "internal");
-        //             oriChatBot.setPageTitle("Vodafone");
-        //             // oriChatBot.setAppDetails("https://vil-dev.oriserve.in/androidAppVodafone.html");
-        //             oriChatBot.setUserData(userData.toString());
-        //             // oriChatBot.setBotIdentifier("vodafone-dev");
-        //         //     oriChatBot.setBrand(brand);
-        //         //     oriChatBot.setMSISDN("9734902237");
-        //         //     oriChatBot.setStateCode(stateCode);
-        //             // oriChatBot.setCustomerName(customerName);
-        //         //     oriChatBot.setLob(lob);
-        //         //     oriChatBot.setJourneyData(journeyData.toString());
-        //         //     oriChatBot.addEventListener(new OriChatBot.EventListener() {
-        //         //     @Override
-        //         //     public void onEventReceived(JSONObject data) {
-        //         //         System.out.println("Event Received :------------------->  " + data);
-        //         //     }
-        //         // });
-        //         // oriChatBot.setBotId("https://vil-dev.oriserve.in/");
-        //         oriChatBot.launchBot();
-        //         return "OriChatBot is available";
-
-        // }
     }
 }

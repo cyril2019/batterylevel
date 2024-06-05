@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="OriWebView" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="OriTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="OriTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
